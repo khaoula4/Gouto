@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Gouto</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="top_sheet_behavior" translatable="false">com.example.gouto.TopSheetBehavior</string>
+</resources>

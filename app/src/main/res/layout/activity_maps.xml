@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".MapsActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_anchor="@+id/map"
+        app:layout_anchorGravity="center"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/filter"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="153dp"
+                android:background="@drawable/filt"
+                android:onClick="openTopSheet"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toStartOf="@+id/add"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                />
+
+            <ImageButton
+                android:id="@+id/add"
+
+
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="155dp"
+
+                android:layout_marginTop="15dp"
+                android:background="@drawable/se"
+                android:onClick="openTopSheet2"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/filter"
+                tools:ignore="MissingConstraints"
+                />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+
+
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            tools:ignore="MissingConstraints">
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/font"
+                android:orientation="vertical"
+
+                app:layout_constraintEnd_toEndOf="@+id/guideline3"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                tools:ignore="NotSibling">
+
+
+                <TextView
+                    android:id="@+id/logo_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/cormo"
+                    android:gravity="center"
+                    android:text="Fiche technique du forage"
+                    android:textColor="#000"
+
+                    android:textSize="25sp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+
+                        android:layout_height="50dp"
+                        android:background="@drawable/box"
+                        android:baselineAligned="false"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/X2"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/box2"
+                            android:gravity="left"
+                            android:hint="X"
+                            android:padding="15dp"
+                            android:paddingStart="30dp"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+
+                            android:textColor="#6C8A40"
+                            android:textColorHint="#6C8A40"
+
+                            app:boxStrokeColor="#636262">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/X"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:hint="29,154789"
+                            android:padding="15dp"
+                            android:paddingEnd="30dp"
+                            android:textColor="#000"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+
+                            android:textColorHint="#000000"
+
+                            app:boxStrokeColor="#80000000">
+
+
+                        </TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginRight="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/box"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/Y2"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/box2"
+                            android:gravity="left"
+                            android:hint="Y"
+                            android:padding="15dp"
+                            android:paddingStart="30dp"
+
+
+                            android:textColor="#6C8A40"
+                            android:textColorHint="#6C8A40"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+
+                            app:boxStrokeColor="#80000000">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/Y"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:hint="29,154789"
+                            android:padding="15dp"
+                            android:paddingEnd="30dp"
+                            android:textColor="#000"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+                            android:textColorHint="#000000"
+
+                            app:boxStrokeColor="#80000000">
+
+
+                        </TextView>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_marginRight="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/box"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/code2"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/box2"
+                            android:gravity="left"
+                            android:hint="N°IRE"
+                            android:padding="15dp"
+                            android:paddingStart="30dp"
+
+
+
+                            android:textColor="#6C8A40"
+                            android:textColorHint="#6C8A40"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+                            app:boxStrokeColor="#80000000">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/code"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:hint="2987/5"
+                            android:padding="15dp"
+                            android:paddingEnd="30dp"
+                            android:textColor="#000"
+
+                            android:textColorHint="#000000"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+                            app:boxStrokeColor="#80000000">
+
+
+                        </TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_marginRight="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/box"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/pr"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/box2"
+                            android:gravity="left"
+                            android:hint="Profendeur"
+                            android:padding="15dp"
+                            android:paddingStart="30dp"
+
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+
+                            android:textColor="#6C8A40"
+                            android:textColorHint="#6C8A40"
+
+                            app:boxStrokeColor="#80000000">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/prof"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:hint="45m"
+                            android:padding="15dp"
+                            android:paddingEnd="30dp"
+                            android:textColor="#000"
+
+                            android:textColorHint="#000000"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+                            app:boxStrokeColor="#80000000">
+
+
+                        </TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/box"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/de"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/box2"
+                            android:gravity="left"
+                            android:hint="Débit"
+                            android:padding="15dp"
+                            android:paddingStart="30dp"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+
+                            android:textColor="#6C8A40"
+                            android:textColorHint="#6C8A40"
+
+
+                            app:boxStrokeColor="#80000000">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/debit"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:hint="20m/s"
+                            android:padding="15dp"
+                            android:paddingEnd="30dp"
+                            android:textColor="#000"
+
+                            android:textColorHint="#000000"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+                            app:boxStrokeColor="#80000000">
+
+
+                        </TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_marginRight="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/box"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/p2"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/box2"
+                            android:gravity="left"
+                            android:hint="Forage"
+                            android:padding="15dp"
+                            android:paddingStart="30dp"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+
+                            android:textColor="#6C8A40"
+                            android:textColorHint="#6C8A40"
+
+
+                            app:boxStrokeColor="#80000000">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/p_n"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:hint="Positif"
+                            android:padding="15dp"
+                            android:paddingEnd="30dp"
+                            android:textColor="#000"
+
+                            android:textColorHint="#000000"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+                            app:boxStrokeColor="#80000000">
+
+
+                        </TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginRight="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/box"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/e2"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/box2"
+                            android:gravity="left"
+                            android:hint="Nature"
+                            android:padding="15dp"
+                            android:paddingStart="30dp"
+
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+
+                            android:textColor="#6C8A40"
+                            android:textColorHint="#6C8A40"
+
+                            app:boxStrokeColor="#80000000">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/ex"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:hint="Exploitation"
+                            android:padding="15dp"
+                            android:paddingEnd="30dp"
+                            android:textColor="#000"
+                            android:textColorHint="#000000"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+                            app:boxStrokeColor="#80000000">
+
+
+                        </TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginRight="30dp"
+                        android:layout_marginLeft="30dp"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/box"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/c2"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/box2"
+                            android:gravity="left"
+                            android:hint="Commune"
+                            android:padding="15dp"
+                            android:paddingStart="30dp"
+
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+
+                            android:textColor="#6C8A40"
+                            android:textColorHint="#6C8A40"
+
+                            app:boxStrokeColor="#80000000">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/com"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:hint="com3"
+                            android:padding="15dp"
+                            android:paddingEnd="30dp"
+                            android:textColor="#000"
+                            android:textColorHint="#000000"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+                            app:boxStrokeColor="#80000000">
+
+
+                        </TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginRight="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/box"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/p22"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/box2"
+                            android:gravity="left"
+                            android:hint="Province"
+                            android:padding="15dp"
+                            android:paddingStart="30dp"
+
+
+
+                            android:textColor="#6C8A40"
+                            android:textColorHint="#6C8A40"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+                            app:boxStrokeColor="#80000000">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/prov"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:hint="Exploitation"
+                            android:padding="15dp"
+                            android:paddingEnd="30dp"
+                            android:textColor="#000"
+                            android:textColorHint="#000000"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+                            app:boxStrokeColor="#80000000">
+
+
+                        </TextView>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+
+                        android:layout_marginRight="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/box"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/d2"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/box2"
+                            android:gravity="left"
+                            android:hint="Date de réalisation"
+                            android:padding="15dp"
+                            android:paddingStart="25dp"
+
+                            android:fontFamily="@font/grama"
+
+                            android:textColor="#6C8A40"
+                            android:textColorHint="#6C8A40"
+                            android:textSize="16sp"
+                            app:boxStrokeColor="#80000000">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/da"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:hint="2022-5-4"
+                            android:padding="15dp"
+                            android:paddingEnd="30dp"
+                            android:textColor="#000"
+                            android:textColorHint="#000000"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/grama"
+                            app:boxStrokeColor="#80000000">
+
+
+                        </TextView>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.02" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.98" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.10" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.90" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/top_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        app:layout_behavior="@string/top_sheet_behavior"
+        app:behavior_peekHeight="0dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/sheets"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filtrer"
+                android:fontFamily="@font/grama"
+                android:textSize="30sp"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:layout_gravity="center"
+                android:textColor="#000"
+                android:layout_margin="5dp"
+                />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ex_rec1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Exploitation ou Reconaissance"
+                android:textColor="#000"
+                android:fontFamily="@font/grama"
+                android:textColorHint="#80000000"
+                app:boxStrokeColor="#80000000"
+                android:theme="@style/changeBackgroundColor">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+
+                    android:fontFamily="@font/grama"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Comm"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Commune"
+                android:fontFamily="@font/grama"
+                android:textColor="#000"
+                android:textColorHint="#80000000"
+                app:boxStrokeColor="#80000000"
+                android:theme="@style/changeBackgroundColor">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextView20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:fontFamily="@font/grama"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Prov"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Province"
+                android:fontFamily="@font/grama"
+                android:textColor="#000"
+                android:textColorHint="#80000000"
+                app:boxStrokeColor="#80000000"
+                android:theme="@style/changeBackgroundColor">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextView30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:fontFamily="@font/grama"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/filt"
+                android:onClick="filter"
+                android:layout_gravity="right"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+
+
+                />
+        </LinearLayout>
+
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/sheets"
+        android:id="@+id/top_sheet2"
+        android:layout_height="140dp"
+        app:layout_behavior="@string/top_sheet_behavior"
+        app:behavior_peekHeight="0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="32dp"
+                app:hintTextAppearance="@font/grama"
+
+                android:hint="N°IRE">
+
+                <!--this is the actual edit text which takes the input-->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <ImageButton
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/se"
+                android:onClick="search"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="18dp"
+
+                />
+
+        </LinearLayout>
+
+
+
+
+
+
+    </FrameLayout>
+
+
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
